@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import HamburgerMenu from '../HamburgerMenu';
 import styled from 'styled-components';
 
 // create styled container for navbar
@@ -14,7 +15,9 @@ const NavbarContainer = styled.div`
 
 const Navbar = (props) => {
   return (
-    <NavbarContainer>Navbar</NavbarContainer>
+    <NavbarContainer>
+      <HamburgerMenu />
+    </NavbarContainer>
   )
 }
 
