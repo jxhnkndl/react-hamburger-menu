@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MenuToggle from '../MenuToggle/MenuToggle';
+import MenuToggle from '../MenuToggle';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -59,7 +59,7 @@ const HamburgerMenu = (props) => {
       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
       <MenuContainer
         initial={false}
-         animate={isOpen ? 'open' : 'closed'}
+        animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
         transition={menuTransition}
       >
