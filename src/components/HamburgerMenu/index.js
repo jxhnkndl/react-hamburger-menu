@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import MenuToggle from '../MenuToggle/MenuToggle';
 import styled from 'styled-components';
 
 // icon container
@@ -6,17 +7,7 @@ const HamburgerMenuContainer = styled.div`
   display: flex;
 `;
 
-// svg hamburger icon
-// icon color of the icon is determined by props
-const HamburgerIcon = styled.div`
-  color: $(({ reverse }) => reverseColor ? "#000" : "#fff" );
-  cursor: pointer;
-  z-index: 99;
-  transition: all 250ms ease-in-out;
-`;
-
-// menu container (the div that slides out when menu is engaged)
-// the menu will slide out from the right side of the display
+// menu container (the div that slides out from the right when menu is engaged)
 const MenuContainer = styled.div`
   width: 100%;
   min-width: 300px;
@@ -35,14 +26,9 @@ const MenuContainer = styled.div`
 const HamburgerMenu = (props) => {
   return (
     <HamburgerMenuContainer>
-      <HamburgerIcon>
-        Icon
-      </HamburgerIcon>
-      <MenuContainer>
-        Menu
-      </MenuContainer>
+      <MenuToggle toggle={() => {}} isOpen={false} />
     </HamburgerMenuContainer>
-  )
-}
+  );
+};
 
 export default HamburgerMenu;
