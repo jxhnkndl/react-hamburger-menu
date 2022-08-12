@@ -58,8 +58,8 @@ const HamburgerMenu = (props) => {
       {/* pass toggling function and open state to the icon */}
       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
       <MenuContainer
-        initial="false"
-        animate={isOpen ? 'open' : 'closed'}
+        initial={false}
+         animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
         transition={menuTransition}
       >
