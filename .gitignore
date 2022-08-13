@@ -23,6 +23,9 @@
 # README
 README.react.md
 
+# notes
+notes.txt
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
