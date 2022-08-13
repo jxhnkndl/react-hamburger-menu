@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MenuToggle from '../MenuToggle';
+import NavMenu from '../NavMenu';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -21,11 +22,13 @@ const MenuContainer = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(4em)
+  transform: translateX(4em);
   user-select: none;
   padding: 1em 2.5em;
 `;
 
+// hamburger menu container animation variants
+// these control how the menu animates based on whether it's open or closed
 const menuVariants = {
   open: {
     transform: 'translateX(3%)',
@@ -63,7 +66,7 @@ const HamburgerMenu = (props) => {
         variants={menuVariants}
         transition={menuTransition}
       >
-        MENU
+        <NavMenu isOpen={isOpen} />
       </MenuContainer>
     </HamburgerMenuContainer>
   );
