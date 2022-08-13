@@ -21,7 +21,7 @@ const NavList = styled.ul`
 const NavLink = styled(motion.li)`
   font-weight: 600;
   color: #444;
-  height: 35px;
+  height: 42px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -29,7 +29,7 @@ const NavLink = styled(motion.li)`
   a {
     text-decoration: none;
     color: #444;
-    font-size: 18px;
+    font-size: 20px;
     transition: all 200ms ease-in-out;
   }
 
@@ -45,7 +45,7 @@ const NavLink = styled(motion.li)`
 // the menu container is open or closed
 const navLinkVariants = {
   show: {
-    transform: 'translateX(0)',
+    transform: 'translateX(0em)',
     opacity: 1,
   },
   hide: {
@@ -59,7 +59,11 @@ const NavMenu = ({ isOpen }) => {
     <NavMenuContainer>
       <NavList>
         {/* the animate prop uses the show/hide variants to control 
-            the link's animation behavior based on isOpen state */}
+            the link's animation behavior based on isOpen state.
+            the end goal is to have each link animate in or out
+            sequentially when the nav menu opens or closes */}
+
+        {/* LINK 1: Home */}
         <NavLink
           inital={false}
           animate={isOpen ? 'show' : 'hide'}
@@ -76,8 +80,109 @@ const NavMenu = ({ isOpen }) => {
             },
           }}
         >
-          <a href="http://localhost:3000/">HOME</a>
+          <a href="http://localhost:3000/">Home</a>
         </NavLink>
+
+        {/* LINK 2: Products */}
+        <NavLink
+          inital={false}
+          animate={isOpen ? 'show' : 'hide'}
+          variants={{
+            // control link animation when menu opens
+            show: {
+              ...navLinkVariants.show,
+              transition: { delay: 0.4, duration: 0.2 },
+            },
+            // control link animation when menu closes
+            hide: { 
+              ...navLinkVariants.hide,
+              transition: { delay: 0.1, duration: 0.05 }
+            },
+          }}
+        >
+          <a href="http://localhost:3000/">Products</a>
+        </NavLink>
+
+        {/* LINK 3: Key Benefits */}
+        <NavLink
+          inital={false}
+          animate={isOpen ? 'show' : 'hide'}
+          variants={{
+            // control link animation when menu opens
+            show: {
+              ...navLinkVariants.show,
+              transition: { delay: 0.5, duration: 0.2 },
+            },
+            // control link animation when menu closes
+            hide: { 
+              ...navLinkVariants.hide,
+              transition: { delay: 0.15, duration: 0.05 }
+            },
+          }}
+        >
+          <a href="http://localhost:3000/">Key Benefits</a>
+        </NavLink>
+
+        {/* LINK 4: About */}
+        <NavLink
+          inital={false}
+          animate={isOpen ? 'show' : 'hide'}
+          variants={{
+            // control link animation when menu opens
+            show: {
+              ...navLinkVariants.show,
+              transition: { delay: 0.6, duration: 0.2 },
+            },
+            // control link animation when menu closes
+            hide: { 
+              ...navLinkVariants.hide,
+              transition: { delay: 0.2, duration: 0.05 }
+            },
+          }}
+        >
+          <a href="http://localhost:3000/">About</a>
+        </NavLink>
+
+        {/* LINK 5: FAQ */}
+        <NavLink
+          inital={false}
+          animate={isOpen ? 'show' : 'hide'}
+          variants={{
+            // control link animation when menu opens
+            show: {
+              ...navLinkVariants.show,
+              transition: { delay: 0.7, duration: 0.2 },
+            },
+            // control link animation when menu closes
+            hide: { 
+              ...navLinkVariants.hide,
+              transition: { delay: 0.25, duration: 0.05 }
+            },
+          }}
+        >
+          <a href="http://localhost:3000/">FAQ</a>
+        </NavLink>
+        
+        {/* LINK 6: Contact */}
+        <NavLink
+          inital={false}
+          animate={isOpen ? 'show' : 'hide'}
+          variants={{
+            // control link animation when menu opens
+            show: {
+              ...navLinkVariants.show,
+              transition: { delay: 0.8, duration: 0.2 },
+            },
+            // control link animation when menu closes
+            hide: { 
+              ...navLinkVariants.hide,
+              transition: { delay: 0.3, duration: 0.05 }
+            },
+          }}
+        >
+          <a href="http://localhost:3000/">Contact</a>
+        </NavLink>
+        
       </NavList>
     </NavMenuContainer>
   );
